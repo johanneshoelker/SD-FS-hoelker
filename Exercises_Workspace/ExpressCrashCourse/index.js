@@ -1,10 +1,27 @@
 const express = require('express');
+const path = require('path');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hellooo World</h1>');
-});
+const logger = require('./middleware/logger')
+
+//Init middleware
+//app.use(logger);
+
+//Body Parser Middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
+//Adding HTML for every single website so not useful
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// });
+
+//  Setting a static folder
+app.use(express.static(path.join(__dirname,'public')));
+
+//Members API routes
+app.use('/api/members',require('./routes/api/members'));
 
 const PORT = process.env.PORT || 5000;
 
