@@ -1,17 +1,27 @@
 const express = require('express');
 const path = require('path');
-
+const exphbs= require('express-handlebars');
 const app = express();
 
 const logger = require('./middleware/logger')
-
+const members=require('./Members');
 //Init middleware
 //app.use(logger);
+
+//Handlebars middleware
+app.engine('handlebars',exphbs({defaultLayout: 'main'}));
+app.set('view engine','handlebars');
+
 
 //Body Parser Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
+//Homepage route
+app.get('/',(req,res)=> res.render('index',{
+  title: 'Member App',
+  members
+}));
 //Adding HTML for every single website so not useful
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));

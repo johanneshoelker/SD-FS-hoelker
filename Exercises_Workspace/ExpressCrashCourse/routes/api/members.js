@@ -28,10 +28,11 @@ router.post('/',(req,res)=>{
   }
 
   if(!newMember.name || !newMember.email){
-    return res.status(400).json{msg: 'Please include a name and email'});
+    return res.status(400).json({msg: 'Please include a name and email'});
   }
   members.push(newMember);
-  res.json(members);
+  //res.json(members);
+  res.redirect('/');
 });
 
 //Update Member
@@ -54,7 +55,21 @@ router.put('/:id',(req,res)=>{
   } else{
     res.status(400).json({msg:`Member not found: ${req.params.id}`});
   }
+});
+
+router.get('/', (req,res)=>res.json(members));
+
+//Delete member
+router.delete('/:id',(req,res)=>{
+  //res.send(req.params.id);
+  const found = members.some(member=>member.id===parseInt(req.params.id));
+  if(found){
+    res.json({msg:'Member deleted',members: members.filter(member=>member.id !== parseInt(req.params.id))});
+  } else{
+    res.status(400).json({msg:`Member not found: ${req.params.id}`});
+  }
 
 });
+
 
 module.exports = router;
