@@ -1,0 +1,14 @@
+<!-- Title for the Herolist -->
+<h2>My Heroes</h2>
+<!-- ?loop for creating the list? -->
+<ul class="heroes">
+  <li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">
+    <!-- creates Button with Id and the name for one hero -->
+    <span class="badge">no.{{hero.id}}</span> {{hero.name}} : {{hero.strength}}
+  </li>
+</ul>
+
+<!-- calls the hero-detail HTML after one was chosen-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
