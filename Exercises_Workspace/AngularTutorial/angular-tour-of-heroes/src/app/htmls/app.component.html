@@ -1,6 +1,12 @@
 <!--shows title of the page -->
 <h1>{{title}}</h1>
-<!-- ?calls the heroes.component.ts -->
-<app-heroes></app-heroes>
+<!-- A routerLink attribute is set to "/heroes", the string that the router matches to the route to HeroesComponent. The routerLink is the selector for the RouterLink directive that turns user clicks into router navigations. It's another of the public directives in the RouterModule. -->
+<nav>
+  <!-- Links to the different pages visible on every page -->
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+<!--  the app will only display the HeroesComponent when the user navigates to it -->
+<router-outlet></router-outlet>
 <!-- ?calls the messages.component.ts -->
 <app-messages></app-messages>
