@@ -1,4 +1,4 @@
-<!--shows title of the page -->
+<!--shows title of the page / interpolation binding syntax {{}}-->
 <h1>{{title}}</h1>
 <!-- A routerLink attribute is set to "/heroes", the string that the router matches to the route to HeroesComponent. The routerLink is the selector for the RouterLink directive that turns user clicks into router navigations. It's another of the public directives in the RouterModule. -->
 <nav>
@@ -8,5 +8,5 @@
 </nav>
 <!--  the app will only display the HeroesComponent when the user navigates to it -->
 <router-outlet></router-outlet>
-<!-- ?calls the messages.component.ts -->
+<!-- app-heroes is the element selector for the HeroesComponent. So add an <app-heroes> element to the AppComponent template file, just below the title -->
 <app-messages></app-messages>

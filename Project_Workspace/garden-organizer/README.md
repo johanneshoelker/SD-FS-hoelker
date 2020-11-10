@@ -1,7 +1,4 @@
-#Basic informations/defintions
-Components are the fundamental building blocks of Angular applications. They display data on the screen, listen for user input, and take action based on that input.
-
-# AngularTourOfHeroes
+# GardenOrganizer
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
