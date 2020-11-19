@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';//You always import the Compon
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
-@Component({
+@Component({//here are the pointers
   selector: 'app-heroes',// the component's CSS element selector
   templateUrl: '../htmls/heroes.component.html',//the location of the component's template file.
   styleUrls: ['./heroes.component.css']//he location of the component's private CSS styles.
@@ -20,4 +20,17 @@ export class HeroesComponent implements OnInit {//Always export the component cl
     this.heroService.getHeroes()
     .subscribe(heroes => this.heroes = heroes);
   }
+
+  add(name: string): void {
+  name = name.trim();
+  if (!name) { return; }
+  this.heroService.addHero({ name } as Hero)
+    .subscribe(hero => {
+      this.heroes.push(hero);
+    });
+  }
+  delete(hero: Hero): void {
+  this.heroes = this.heroes.filter(h => h !== hero);
+  this.heroService.deleteHero(hero).subscribe();
+}
 }
