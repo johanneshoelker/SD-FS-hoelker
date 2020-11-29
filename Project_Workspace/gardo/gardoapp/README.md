@@ -7,3 +7,6 @@ show collections
 use gardo
 db.users.find().pretty()
 
+
+for debugging
+console.log(variable);

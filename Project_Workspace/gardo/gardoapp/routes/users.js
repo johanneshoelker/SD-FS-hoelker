@@ -36,7 +36,7 @@ router.post('/authenticate', (req,res,next)=> {
     User.comparePassword(password, user.password, (err, isMatch)=>{
       if(err) throw err;
       if (isMatch) {//when the password is right
-        const token = jwt.sign({data: user}, config.secret, {
+        const token = jwt.sign({data: user}, config.secret, {//creates a token (after successful login) which has to stored on local storage or in cookies
           expiresIn: 604800// expires in 1 week
         });
         res.json({
@@ -57,8 +57,8 @@ router.post('/authenticate', (req,res,next)=> {
 });
 
 //Profile
-router.get('/profile', (req,res,next)=> {
-  res.send('PROFILE');
+router.get('/profile', passport.authenticate('jwt', {session:false}), (req,res,next)=> {
+  res.json({user:req.user});
 });
 
 
