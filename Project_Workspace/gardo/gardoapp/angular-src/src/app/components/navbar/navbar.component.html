@@ -1,0 +1,83 @@
+<!-- view-source:https://getbootstrap.com/docs/4.5/examples/navbars/ -->
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Gardo App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarsExample02">
+    <ul class="nav navbar-nav navbar-left">
+      <li [routerLinkActive]= "['active']">
+        <a class="nav-link"  [routerLink]="['/']">Home</a>
+      </li>
+      <li [routerLinkActive]= "['active']">
+        <a class="nav-link"  [routerLink]="['/login']">Login</a>
+      </li>
+      <li  [routerLinkActive]= "['active']">
+        <a class="nav-link" [routerLink]="['/register']">Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!-- Source Code from Brad -->
+<!-- <nav class="navbar navbar-expand navbar-dark bg-primary">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">MEAN Auth App</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/']">Home</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+            <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/profile']">Profile</a></li>
+
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+            <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+            <li *ngIf="authService.loggedIn()"><a (click)="onLogoutClick()" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav> -->
+
+
+
+
+
+<!-- Brads solution: Propably outdated -->
+
+<!-- <nav class ='navbar navbar-default'>
+  <div class="navbar-header">
+      <div class="container">
+          <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Gardo App</a>
+          </div>
+          < <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li [routerLinkActive]="['active']" [router LinkActiveOptions] = "{exact:true}"><a [routerLink]="['/']">Home</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li [routerLinkActive]="['active']" [router LinkActiveOptions] = "{exact:true}"><a [routerLink]="['/login']">Login</a></li>
+                <li [routerLinkActive]="['active']" [router LinkActiveOptions] = "{exact:true}"><a [routerLink]="['/register']">Register</a></li>
+            </ul>
+          </div>
+      </div>
+  </div>
+</nav> -->
