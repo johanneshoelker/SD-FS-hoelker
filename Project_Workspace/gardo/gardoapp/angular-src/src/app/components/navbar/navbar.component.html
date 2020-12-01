@@ -6,22 +6,22 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarsExample02">
     <ul class="nav navbar-nav navbar-left">
-      <li [routerLinkActive]= "['active']">
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]= "['active']">
         <a class="nav-link"  [routerLink]="['/']">Home</a>
       </li>
-      <li [routerLinkActive]= "['active']">
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]= "['active']">
         <a class="nav-link"  [routerLink]="['/dashboard']">Dashboard</a>
       </li>
-      <li [routerLinkActive]= "['active']">
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]= "['active']">
         <a class="nav-link"  [routerLink]="['/profile']">Profile</a>
       </li>
-      <li [routerLinkActive]= "['active']">
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]= "['active']">
         <a class="nav-link"  [routerLink]="['/login']">Login</a>
       </li>
-      <li  [routerLinkActive]= "['active']">
+      <li  *ngIf="!authService.loggedIn()" [routerLinkActive]= "['active']">
         <a class="nav-link" [routerLink]="['/register']">Register</a>
       </li>
-      <li >
+      <li *ngIf="authService.loggedIn()">
         <a class="nav-link" (click)="onLogoutClick()" href='#'>Logout</a>
       </li>
     </ul>
