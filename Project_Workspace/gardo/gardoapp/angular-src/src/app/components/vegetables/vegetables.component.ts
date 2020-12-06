@@ -1,22 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Vegetable } from '../../vegetable';
 import { VEGS } from '../../mock-vegs';
-
+import { VegetableService } from '../../services/vegetable.service'
 @Component({
   selector: 'app-vegetables',
   templateUrl: './vegetables.component.html',
   styleUrls: ['./vegetables.component.css']
 })
 export class VegetablesComponent implements OnInit {
-  vegetables = VEGS;
+  vegetables: Vegetable[];
   selectedVeg: Vegetable;
 
-  constructor() { }
+  constructor(private vegetableService: VegetableService) { }
 
   ngOnInit() {
+    this.getVegs();
   }
 
   onSelect(vegetable: Vegetable): void{
     this.selectedVeg = vegetable;
+  }
+
+  getVegs(): void {
+    this.vegetableService.getVegs()
+        .subscribe(vegetables => this.vegetables = vegetables);
   }
 }

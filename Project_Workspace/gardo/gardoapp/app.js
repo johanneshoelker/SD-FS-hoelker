@@ -22,7 +22,7 @@ mongoose.connection.on('erros', (err)=>{
 //Initializing Express
 const app=express();
 
-//Bringin in users folder whith user routes
+//Bringing in users folder whith user routes
 const users = require('./routes/users');
 
 //Port Number
