@@ -20,9 +20,20 @@ router.post('/addveg', (req,res,next)=> {
   });
 });
 
-//Get request for seeing vegetables
-router.get('/seeveg', (req,res,next)=> {
-  //res.json({veg:req.veg});
-  res.send('SEE VEG');
+//Get request to see all vegetables in one list
+router.get('/seevegs', (req,res,next)=> {
+  const name = req.body.name;
+  Veg.getVegs((err,vegs)=>{
+    res.json(vegs);      //das hier gibt die get request aus
+  })
 });
+
+//Get request for seeing one specific vegetable
+router.get('/seeveg', (req,res,next)=> {
+  const name = req.body.name;
+  Veg.getVegByName(name, (err,veg)=>{
+    res.json(veg);      //das hier gibt die get request aus
+  })
+});
+
 module.exports = router;

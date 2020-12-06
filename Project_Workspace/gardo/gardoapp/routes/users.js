@@ -49,7 +49,7 @@ router.post('/authenticate', (req,res,next)=> {
             email: user.email
           }
         });
-      } else{//when the passwor dis wrong
+      } else{//when the password is wrong
         return res.json({success: false, msg: 'Wrong password'});
       }
     });
