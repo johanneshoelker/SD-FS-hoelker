@@ -1,3 +1,5 @@
+//This is the main server entry point file
+
 const express = require("express");
 const path= require("path");
 const bodyParser=require('body-parser');//it parses incoming request body
@@ -15,7 +17,7 @@ mongoose.connection.on('connected', ()=>{
 });
 
 //Connection to database (in config) has an error
-mongoose.connection.on('erros', (err)=>{
+mongoose.connection.on('error', (err)=>{
   console.log('Database error:  '+err);
 });
 
@@ -24,6 +26,8 @@ const app=express();
 
 //Bringing in users folder whith user routes
 const users = require('./routes/users');
+//Also bringing in vegs folder on the same server
+const vegs = require('./routes/vegs');
 
 //Port Number
 const port=3000;
@@ -44,9 +48,10 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
+app.use('/vegs', vegs);
 
-//Index Route
-app.get('/', (requ,res)=>{
+//Index Route not used on the backend
+app.get('/', (req,res)=>{
   res.send('Invalid Endpoint');
 });
 
