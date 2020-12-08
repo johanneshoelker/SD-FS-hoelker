@@ -1,3 +1,4 @@
+<h4>Add an vegetable:</h4>
 <form (submit)="onAddingSubmit()">
   <div class="form-group">
     <label>Name</label>
@@ -11,9 +12,10 @@
     <label>Harvest Date</label>
     <input type="text" [(ngModel)]="harvdate" name="harvdate" class="form-control" >
   </div>
-  <!-- <div class="form-group">
-    <label>Password</label>
-    <input type="password" [(ngModel)]="password" name="password" class="form-control">
+  <!-- Share your experiences:
+  <div class="form-group">
+    <label>Experiences</label>
+    <input type="experiences" [(ngModel)]="experiences" name="experiences" class="form-control">
   </div> -->
   <input type="submit" class="btn btn-primary" value="Submit">
 </form>

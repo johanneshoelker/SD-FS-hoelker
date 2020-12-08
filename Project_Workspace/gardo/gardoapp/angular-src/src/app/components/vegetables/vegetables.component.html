@@ -1,5 +1,6 @@
-<h2>Public Vegetables</h2>
+<h2>List of all Vegetables</h2>
 <div class="row">
+<div class="column">
   <ul class="vegetables">
     <li *ngFor="let vegetable of vegetables"
       [class.selected]="vegetable === selectedVeg"
@@ -9,7 +10,10 @@
     </li>
     <app-vegetable-adding></app-vegetable-adding>
   </ul>
+</div>
+<div class="column">
   <app-vegetable-detail [vegetable]="selectedVeg"></app-vegetable-detail>
-
+  <button type="button" class="btn btn-primary" (click)="onPlant()">Let's plan(t) this one</button>
+</div>
 
 </div>

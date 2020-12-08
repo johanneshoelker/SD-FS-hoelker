@@ -21,6 +21,9 @@ import { AuthGuard } from "./guards/auth.guard";
 import { VegetableDetailComponent } from './components/vegetable-detail/vegetable-detail.component';
 import { VegetableService } from "./services/vegetable.service";
 import { VegetableAddingComponent } from './components/vegetable-adding/vegetable-adding.component';
+import { VegetablePlantingComponent } from './components/vegetable-planting/vegetable-planting.component';
+import { GardenComponent } from './components/garden/garden.component';
+import { GardenPlantedComponent } from './components/garden-planted/garden-planted.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -29,6 +32,8 @@ const appRoutes: Routes = [
   {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
   {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   {path:'vegetables', component: VegetablesComponent, canActivate:[AuthGuard]},
+  {path:'garden', component: GardenComponent, canActivate:[AuthGuard]},
+  {path:'vegetables/planting', component: VegetablePlantingComponent, canActivate:[AuthGuard]},
 ]
 
 @NgModule({
@@ -43,7 +48,10 @@ const appRoutes: Routes = [
     ProfileComponent,
     VegetablesComponent,
     VegetableDetailComponent,
-    VegetableAddingComponent
+    VegetableAddingComponent,
+    VegetablePlantingComponent,
+    GardenComponent,
+    GardenPlantedComponent
   ],
   imports: [
     BrowserModule,
