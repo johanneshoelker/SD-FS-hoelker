@@ -17,6 +17,7 @@ export class VegetablesComponent implements OnInit {
     this.getVegs();
   }
 
+
   onSelect(vegetable: Vegetable): void{
     this.selectedVeg = vegetable;
   }
