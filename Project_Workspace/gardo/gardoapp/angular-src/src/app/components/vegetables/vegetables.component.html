@@ -1,10 +1,15 @@
 <h2>Public Vegetables</h2>
-<ul class="vegetables">
-  <li *ngFor="let vegetable of vegetables"
-    [class.selected]="vegetable === selectedVeg"
-    (click)="onSelect(vegetable)">
-    <span class="badge">{{vegetable.id}}</span>{{vegetable.name}}
-  </li>
-</ul>
+<div class="row">
+  <ul class="vegetables">
+    <li *ngFor="let vegetable of vegetables"
+      [class.selected]="vegetable === selectedVeg"
+      (click)="onSelect(vegetable)">
+      <!-- <span class="badge">{{vegetable.id}}</span>{{vegetable.name}} -->
+      <span>{{vegetable.name}}</span>
+    </li>
+    <li>  <app-vegetable-adding></app-vegetable-adding></li>
+  </ul>
+  <app-vegetable-detail [vegetable]="selectedVeg"></app-vegetable-detail>
 
-<app-vegetable-detail [vegetable]="selectedVeg"></app-vegetable-detail>
+
+</div>

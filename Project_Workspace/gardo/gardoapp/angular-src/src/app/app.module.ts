@@ -20,6 +20,7 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import { AuthGuard } from "./guards/auth.guard";
 import { VegetableDetailComponent } from './components/vegetable-detail/vegetable-detail.component';
 import { VegetableService } from "./services/vegetable.service";
+import { VegetableAddingComponent } from './components/vegetable-adding/vegetable-adding.component';
 
 const appRoutes: Routes = [
   {path:'', component: HomeComponent},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     ProfileComponent,
     VegetablesComponent,
-    VegetableDetailComponent
+    VegetableDetailComponent,
+    VegetableAddingComponent
   ],
   imports: [
     BrowserModule,

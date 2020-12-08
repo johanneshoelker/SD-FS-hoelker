@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vegetable } from '../../vegetable';
-import { VEGS } from '../../mock-vegs';
+
 import { VegetableService } from '../../services/vegetable.service'
 @Component({
   selector: 'app-vegetables',
@@ -10,7 +10,7 @@ import { VegetableService } from '../../services/vegetable.service'
 export class VegetablesComponent implements OnInit {
   vegetables: Vegetable[];
   selectedVeg: Vegetable;
-
+  vegetable: any;
   constructor(private vegetableService: VegetableService) { }
 
   ngOnInit() {
