@@ -20,11 +20,6 @@ export class VegetablesComponent implements OnInit {
   ngOnInit() {
     this.getVegs();
   }
-  //click event for the button Let's plan(t) this one. It redirects to the planting route
-  onPlant(): void{
-    this.router.navigate(['/vegetables/planting']);
-  }
-
   onSelect(vegetable: Vegetable): void{
     this.selectedVeg = vegetable;
   }
@@ -33,8 +28,4 @@ export class VegetablesComponent implements OnInit {
     this.vegetableService.getVegs()
         .subscribe(vegetables => this.vegetables = vegetables);
   }
-}
-
-export function selectVeg() {
-  return this.selectedVeg
 }
