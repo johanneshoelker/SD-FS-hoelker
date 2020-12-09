@@ -8,8 +8,8 @@ const Veg=require('../models/veg');
 router.post('/addveg', (req,res,next)=> {
   let newVeg = new Veg({
     name: req.body.name,
-    plantdate:req.body.plantdate,
-    harvdate: req.body.harvdate
+    planttime:req.body.planttime,
+    harvtime: req.body.harvtime
   });
   Veg.addVeg(newVeg, (err,veg)=>{
     if(err){

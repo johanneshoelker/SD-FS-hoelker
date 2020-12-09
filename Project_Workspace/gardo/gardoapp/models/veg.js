@@ -5,14 +5,39 @@ const VegSchema = mongoose.Schema({
   name: {
     type:String
   },
-  plantdate:{
+  planttime:{
     type: String,
     required: true
   },
-  harvdate:{
+  harvtime:{
     type: String,
     required: true
   }
+  // ,
+  // freq:{
+  //   type: String,
+  //   required: true
+  // },
+  // neighbours:{
+  //   type: String,
+  //   required: true
+  // },
+  // ferts:{
+  //   type: String,
+  //   required: true
+  // },
+  // region:{
+  //   type: String,
+  //   required: true
+  // },
+  // sun:{
+  //   type: String,
+  //   required: true
+  // },
+  // exps:{
+  //   type: String,
+  //   required: true
+  // }
 });
 
 //Veg is the collection

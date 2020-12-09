@@ -1,28 +1,27 @@
 <div *ngIf="vegetable">
 
   <h2>{{vegetable.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{vegetable.id}}</div>
   <div>
-    <label>name:
-      <input [(ngModel)]="vegetable.name" placeholder="name"/>
-    </label>
+    <div><label>Name: <span>{{vegetable.name}}</span></label></div>
+    <label>Planting Time: <span>{{vegetable.planttime}}</span></label>
+    <!-- <label>Harvesting Time: <span>{{vegetable.harvtime}}</span></label>
+    <label>Experiences: <span>{{vegetable.exps}}</span></label>     -->
   </div>
 
   <h4>Plant this vegetable:</h4>
   <form (submit)="onPlantingSubmit()">
     <div class="form-group">
-      <label>Plant Date</label>
-      <input type="text" [(ngModel)]="plantdate" name="plantdate" class="form-control">
+      <label>How many seeds?</label>
+      <input type="text" [(ngModel)]="plantamount" name="plantamount" class="form-control">
     </div>
     <div class="form-group">
-      <label>Harvest Date</label>
-      <input type="text" [(ngModel)]="harvdate" name="harvdate" class="form-control" >
+      <label>Where? (description)</label>
+      <input type="text" [(ngModel)]="plantlocation" name="plantlocation" class="form-control" placeholder="e.g. right corner of the northern patch">
     </div>
-    <!-- Share your experiences:
-    <!-- <div class="form-group">
-      <label>Experiences</label>
-      <input type="experiences" [(ngModel)]="experiences" name="experiences" class="form-control">
-    </div> -->
+    <div class="form-group">
+      <label>When?</label>
+      <input type="text" [(ngModel)]="plantdate" name="plantdate" class="form-control" placeholder="e.g. 01.04.2021">
+    </div>
     <input type="submit" class="btn btn-primary" value="Let's plan(t) this one">
   </form>
 </div>

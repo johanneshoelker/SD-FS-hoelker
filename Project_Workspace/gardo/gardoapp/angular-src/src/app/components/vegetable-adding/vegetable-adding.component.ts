@@ -10,8 +10,8 @@ import {Router} from '@angular/router';
 })
 export class VegetableAddingComponent implements OnInit {
   name: String;
-  plantdate: String;
-  harvdate: String;
+  planttime: String;
+  harvtime: String;
   constructor(
     private flashMessage: FlashMessagesService,
     private vegetableService: VegetableService,
@@ -25,20 +25,20 @@ export class VegetableAddingComponent implements OnInit {
     //console.log(this.name);
     const vegetable = {
       name: this.name,
-      plantdate:this.plantdate,
-      harvdate: this.harvdate
+      planttime:this.planttime,
+      harvtime: this.harvtime
     }
 
     //Adding a vegetable
     this.vegetableService.addVeg(vegetable).subscribe(data =>{
       if(data.success){
         this.flashMessage.show('The vegetable was added!', {cssClass: 'alert-success', timeout: 3000});
-        this.router.navigate(['/vegetables']);
+        window.location.reload(false);
       } else{
-        this.flashMessage.show('Something went wrong...', {cssClass: 'alert-success', timeout: 3000});
-        this.router.navigate(['/vegetables']);
+        this.flashMessage.show('Something went wrong...', {cssClass: 'alert-danger', timeout: 3000});
       }
     });
+
 
   }
 
