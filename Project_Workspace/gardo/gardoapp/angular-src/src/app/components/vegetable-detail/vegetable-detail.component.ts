@@ -28,7 +28,6 @@ export class VegetableDetailComponent implements OnInit {
 
     //a user specific Vegetable is created here including the vegetable object and the user specific data
     const userSpecVeg = {
-      vegetable: this.vegetable,
       plantamount: this.plantamount,
       plantlocation: this.plantlocation,
       plantdate:this.plantdate
@@ -49,3 +48,18 @@ export class VegetableDetailComponent implements OnInit {
   }
 
 }
+
+//the raw json data looks like this:
+// {
+//     "name": "Array",
+//     "email":"testmail@mail.com",
+//     "username":"array",
+//     "password": "1234567890",
+//     "plants" : [
+//         {
+//             "plant": "potatoe",
+//             "planttime":"april"
+//         }
+//     ]
+//
+// }

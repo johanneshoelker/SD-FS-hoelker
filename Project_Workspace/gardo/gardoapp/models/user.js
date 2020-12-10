@@ -19,6 +19,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  plants: [ ]
 });
 
 const User = module.exports=mongoose.model('User', UserSchema);
@@ -39,6 +40,13 @@ module.exports.addUser = function(newUser, callback){
       newUser.save(callback);
     });
   });
+}
+
+module.exports.updateUser = function(username, plants, callback){
+  //User.updateOne({ name: 'nextest' }, [{ $addFields: { plant: 'melon' }}])
+  const query = {username: username}
+  const aggregation = [{ $addFields: { plants : plants }}]
+  User.updateOne(query, aggregation, callback);
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){

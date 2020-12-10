@@ -23,6 +23,20 @@ router.post('/register', (req,res,next)=> {
   });
 });
 
+//Update
+router.post('/update', (req,res,next)=> {
+  const username= req.body.username;
+  const plants= req.body.plants;
+
+  User.updateUser(username, plants, (err,user)=>{
+    if(err){
+      res.json({success: false, msg:'Failed to update user'});
+    } else{
+      res.json({success: true, msg:'User updated', username: username});
+    }
+  });
+});
+
 //Authenticate
 router.post('/authenticate', (req,res,next)=> {
   const username = req.body.username;
