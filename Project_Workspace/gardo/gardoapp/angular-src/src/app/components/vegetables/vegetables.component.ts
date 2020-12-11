@@ -22,10 +22,14 @@ export class VegetablesComponent implements OnInit {
   }
   onSelect(vegetable: Vegetable): void{
     this.selectedVeg = vegetable;
+    // console.log(this.vegetables);
+    // console.log(this.vegetable);
+    // console.log(this.selectedVeg);
   }
 
   getVegs(): void {
     this.vegetableService.getVegs()
         .subscribe(vegetables => this.vegetables = vegetables);
+
   }
 }

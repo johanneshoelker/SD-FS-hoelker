@@ -42,10 +42,10 @@ module.exports.addUser = function(newUser, callback){
   });
 }
 
+//update function which adds new fields to a specific user data
 module.exports.updateUser = function(username, plants, callback){
-  //User.updateOne({ name: 'nextest' }, [{ $addFields: { plant: 'melon' }}])
-  const query = {username: username}
-  const aggregation = [{ $addFields: { plants : plants }}]
+  const query = {username: username};
+  const aggregation = [{ $set: { plants : plants }}]
   User.updateOne(query, aggregation, callback);
 }
 

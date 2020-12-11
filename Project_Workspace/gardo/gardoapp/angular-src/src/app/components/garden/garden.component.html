@@ -1,3 +1,19 @@
-<p>
-  garden works!
-</p>
+<h2>List of your planted Vegetables</h2>
+<div *ngIf="user">
+
+<div class="row">
+<div class="column">
+
+  <ul class="plantedvegs">
+  <li *ngFor = "let plantedveg of plantedvegs"
+    [class.selected]="plantedveg === selectedVeg"
+    (click)="onSelect(plantedveg)">
+    <span>{{plantedveg.name}}</span>
+  </li>
+  </ul>
+</div>
+<div class="column">
+  <app-vegetable-detail [vegetable]="selectedVeg"></app-vegetable-detail>
+
+</div>
+</div>
