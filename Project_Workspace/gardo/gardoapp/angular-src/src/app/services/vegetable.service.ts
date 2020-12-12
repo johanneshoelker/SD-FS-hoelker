@@ -25,7 +25,4 @@ export class VegetableService {
     return this.http.post('http://localhost:3000/vegs/addveg', vegetable, {headers: headers})
       .map(res=> res.json());
   }
-
-
-
 }
