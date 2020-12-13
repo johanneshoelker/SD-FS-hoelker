@@ -8,12 +8,16 @@
   <li *ngFor = "let plantedveg of plantedvegs"
     [class.selected]="plantedveg === selectedVeg"
     (click)="onSelect(plantedveg)">
-    <span>{{plantedveg.name}}</span>
+    <span>{{plantedveg.name}}
+    <!-- <div>
+      planted on: {{plantedveg.planttime}}
+    </div> -->
+
+    </span>
   </li>
   </ul>
 </div>
-<div class="column">
+<!-- <div class="column">
   <app-vegetable-detail [vegetable]="selectedVeg"></app-vegetable-detail>
-
-</div>
+</div> -->
 </div>
