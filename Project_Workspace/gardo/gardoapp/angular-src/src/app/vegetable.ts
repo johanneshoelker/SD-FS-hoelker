@@ -1,12 +1,10 @@
 export interface Vegetable {
-  id: number;
   name: String;
   planttime: String;
   harvtime: String;
-  // freq:String;
-  // neighbours:String;
-  // ferts: String;
-  // region: String;
-  // sun: String;
-  // exps: String;
+  freq:String;
+  neighb:String;
+  ferts: String;
+  sun: String;
+  exps: String;
 }

@@ -1,4 +1,4 @@
-<h4>Add an vegetable:</h4>
+<h4>Add any vegetable:</h4>
 <form (submit)="onAddingSubmit()">
   <div class="form-group">
     <label>Name</label>
@@ -12,10 +12,25 @@
     <label>Harvest Time</label>
     <input type="text" [(ngModel)]="harvtime" name="harvtime" class="form-control" >
   </div>
-  <!-- Share your experiences:
   <div class="form-group">
-    <label>Experiences</label>
-    <input type="experiences" [(ngModel)]="experiences" name="experiences" class="form-control">
-  </div> -->
+    <label>Pouring Frequency</label>
+    <input type="text" [(ngModel)]="freq" name="freq" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Best Neighbours</label>
+    <input type="text" [(ngModel)]="neighb" name="neighb" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Best organic Fertilizers</label>
+    <input type="text" [(ngModel)]="ferts" name="ferts" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label>Amount of sun needed</label>
+    <input type="text" [(ngModel)]="sun" name="sun" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label>Your experiences</label>
+    <input type="text" [(ngModel)]="exps" name="exps" class="form-control" >
+  </div>
   <input type="submit" class="btn btn-primary" value="Submit">
 </form>

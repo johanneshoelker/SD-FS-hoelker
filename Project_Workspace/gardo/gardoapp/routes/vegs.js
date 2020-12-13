@@ -9,7 +9,12 @@ router.post('/addveg', (req,res,next)=> {
   let newVeg = new Veg({
     name: req.body.name,
     planttime:req.body.planttime,
-    harvtime: req.body.harvtime
+    harvtime: req.body.harvtime,
+    freq: req.body.freq,
+    neighb: req.body.neighb,
+    ferts: req.body.ferts,
+    sun: req.body.sun,
+    exps: req.body.exps
   });
   Veg.addVeg(newVeg, (err,veg)=>{
     if(err){

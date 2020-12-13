@@ -33,9 +33,6 @@ export class GardenComponent implements OnInit {
 
   onSelect(plantedveg: Plantedveg): void{
     this.selectedVeg = plantedveg;
-    console.log(this.plantedvegs);
-    console.log(this.plantedveg);
-    console.log(this.selectedVeg);
   }
 
 }

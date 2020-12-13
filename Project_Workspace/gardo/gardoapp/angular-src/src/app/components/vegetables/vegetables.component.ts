@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vegetable } from '../../vegetable';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { VegetableService } from '../../services/vegetable.service'
 
 @Component({
@@ -20,13 +20,12 @@ export class VegetablesComponent implements OnInit {
   ngOnInit() {
     this.getVegs();
   }
+
   onSelect(vegetable: Vegetable): void{
     this.selectedVeg = vegetable;
-    // console.log(this.vegetables);
-    // console.log(this.vegetable);
-    // console.log(this.selectedVeg);
   }
 
+  //using the vegetable Service to get data from the backend server
   getVegs(): void {
     this.vegetableService.getVegs()
         .subscribe(vegetables => this.vegetables = vegetables);

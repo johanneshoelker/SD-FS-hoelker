@@ -13,8 +13,6 @@ import { FlashMessagesService } from "angular2-flash-messages";
   styleUrls: ['./vegetable-detail.component.css']
 })
 export class VegetableDetailComponent implements OnInit {
-
-
   plantamount: String;
   plantdate: String;
   plantlocation: String;

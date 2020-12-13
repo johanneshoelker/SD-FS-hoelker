@@ -4,16 +4,12 @@
   <ul class="vegetables">
     <li *ngFor="let vegetable of vegetables"
       [class.selected]="vegetable === selectedVeg"
-      (click)="onSelect(vegetable)">
-      <!-- <span class="badge">{{vegetable.id}}</span>{{vegetable.name}} -->
-      <span>{{vegetable.name}}</span>
+      (click)="onSelect(vegetable)">&nbsp; {{vegetable.name}}
     </li>
     <app-vegetable-adding></app-vegetable-adding>
   </ul>
 </div>
 <div class="column">
   <app-vegetable-detail [vegetable]="selectedVeg"></app-vegetable-detail>
-  
 </div>
-
 </div>
